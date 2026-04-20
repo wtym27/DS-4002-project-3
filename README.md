@@ -34,8 +34,6 @@ We use a large dataset containing approximately 3.7 million images across 28 spe
 ### Platform
 
 This project was developed and tested on:
-
-- Windows  
 - Linux (UVA HPC system)
 
 ### Research Computing Resources
@@ -88,8 +86,8 @@ Here is an outline for how we produced our results:
 3. Install the required packages as mentioned above using `pip install [PACKAGE NAMES HERE]`
 
 ### Step 3: Prepare the dataset
-1. Download all the files at https://lila.science/datasets/nacti in the data/ directory. 
-2. Unzip the files (this may take a while) with the `unzip` command. 
+1. Download all the files at https://lila.science/datasets/nacti in the data/ directory using `wget` and `unzip`. 
+2. See "data/data_collection_process.md" for specific details on downloading all of the data. 
 
 ### Step 4: Run EDA
 1. Run the EDA script by pressing the triangle on the top left that appears when you open`src/EDA.ipynb`.
@@ -97,7 +95,7 @@ Here is an outline for how we produced our results:
 
 ### Step 5: Run CNN
 1. Move ready_cnn.py and job.sh into the DS-4002-project-3/ directory by doing `mv [FILE_NAME_HERE] ../`. This is necessary because for some reason they cannot access the data/ folder unless it is a child folder. 
-2. The CNN takes about 20 hours to run, so it is not recommended to run the large_cnn.ipynb file. Instead, schedule a slurm job that uses ready_cnn.py, which uses the same code, by doing `sbatch job.sh'. 
+2. The CNN takes about 20 hours to run, so it is not recommended to run the large_cnn.ipynb file. Instead, schedule a slurm job that uses ready_cnn.py, which uses the same code, by doing `sbatch job.sh`. 
 
 ### Step 7: Review Results
 1. Inspect the slurm output log or the output_metric.txt document to see results. 
